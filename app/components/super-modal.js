@@ -1,0 +1,1 @@
+export { default } from 'super-modal/components/super-modal';

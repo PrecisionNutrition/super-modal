@@ -1,0 +1,18 @@
+<div class="SuperModal-outer Grid Grid--alignCenter u-flexCol u-flexNoWrap {{outerClassNames}}">
+
+  {{#if disableOverlayClose}}
+    <div class="SuperModal-overlay {{overlayClassNames}}"></div>
+  {{else}}
+    <div class="SuperModal-overlay {{overlayClassNames}}" {{action onClose}}></div>
+  {{/if}}
+
+  <div class="SuperModal-inner Grid-cell {{innerClassNames}}">
+
+    {{#unless hideCloseButton}}
+      <button type="button" class="SuperModal-closeButton" {{action onClose}} data-test-selector="modal-close-button" aria-label="Close">&times;</button>
+    {{/unless}}
+
+    {{yield}}
+
+  </div>
+</div>
