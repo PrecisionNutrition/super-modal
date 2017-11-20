@@ -13,7 +13,10 @@ export default Component.extend({
     'SuperModal',
   ],
 
-  classNameBindings: ['modifierClassName'],
+  classNameBindings: [
+    'modifierClassName',
+    'isIos11'
+  ],
 
   didInsertElement() {
     this._super(...arguments);
