@@ -1,1 +1,1 @@
-export { default } from 'super-modal/components/super-modal';
+export { default } from '@precision-nutrition/super-modal/components/super-modal';

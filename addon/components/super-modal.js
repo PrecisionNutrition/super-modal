@@ -1,10 +1,5 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/super-modal';
-
-const {
-  $,
-  Component,
-} = Ember;
 
 export default Component.extend({
   layout,
@@ -21,9 +16,11 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    $('body').on('keyup.modal-dialog', (e) => {
-      if (e.keyCode === 27) {
-        this.sendAction('onClose');
+    this.listener = document.addEventListener('keyup', (event) => {
+      let { key } = event;
+
+      if (key === 'Escape') {
+        this.onClose(event);
       }
     });
   },
@@ -31,6 +28,6 @@ export default Component.extend({
   willDestroyElement() {
     this._super(...arguments);
 
-    $('body').off('keyup.modal-dialog');
+    document.removeEventListener('keyup', this.listener);
   },
 });

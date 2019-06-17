@@ -1,20 +1,24 @@
-# super-modal [![Build Status](https://travis-ci.com/PrecisionNutrition/super-modal.svg?token=Y8mfZMTrTcJd8Mz5UCHm&branch=master)](https://travis-ci.com/PrecisionNutrition/super-modal)
+super-modal [![Build Status](https://travis-ci.com/PrecisionNutrition/super-modal.svg?token=Y8mfZMTrTcJd8Mz5UCHm&branch=master)](https://travis-ci.com/PrecisionNutrition/super-modal)
+==============================================================================
 
 A versatile, CSS-only, scrollable modal that shrink wraps its content. You must define your own styles for now.
 
-## Requirements
+Requirements
+------------------------------------------------------------------------------
 
 * SuitCSS Grid
 * SuitCSS Flex Utility Classes
 
-## Elements
+Elements
+------------------------------------------------------------------------------
 
 * `-outer` - The outermost container of all modal pieces
 * `-overlay` - The darkened background
 * `-inner` - The centred area that holds the content
 * `-closeButton` - The close button
 
-## Attributes
+Attributes
+------------------------------------------------------------------------------
 
 * `modifierClassName`   - (Optional) Class name to add to the modal to differentiate between modals for styling purposes
 * `outerClassNames`     - (Optional) Class names to add to the `-outer` div
@@ -22,7 +26,8 @@ A versatile, CSS-only, scrollable modal that shrink wraps its content. You must 
 * `innerClassNames`     - (Optional) Class names to add to the `-inner` div
 * `disableOverlayClose` - (Optional) Remove the ability to click on the overlay to close the modal
 
-## NOTES:
+NOTES:
+------------------------------------------------------------------------------
 
 Because the SuperModal shrink wraps its content (i.e., the `-inner` div contracts to fit the content inside of it), its behaviour can depend on the type of content that it holds.
 
@@ -35,7 +40,8 @@ If the content has a set width or max-width, no problem, the `-inner` div will s
 Inversely, it can happen that the `-inner` div shrink wraps the content a little too much and the modal becomes too narrow. If this happens, add a `width: 100%; max-width: Xrem` (where Xrem is the desired width of the modal) to your `-inner` custom CSS rule, or pass equivalent utility classes into the `innerClassNames` attribute.
 
 
-## Example CSS
+Example CSS
+------------------------------------------------------------------------------
 
 Copy this CSS to lay the foundation for your modal.
 

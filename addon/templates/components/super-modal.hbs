@@ -3,7 +3,9 @@
   {{#if disableOverlayClose}}
     <div class="SuperModal-overlay {{overlayClassNames}}"></div>
   {{else}}
+    {{! template-lint-disable no-invalid-interactive }}
     <div class="SuperModal-overlay {{overlayClassNames}}" {{action onClose}}></div>
+    {{! template-lint-enable no-invalid-interactive }}
   {{/if}}
 
   <div class="SuperModal-inner Grid-cell {{innerClassNames}}">
