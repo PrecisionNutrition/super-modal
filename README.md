@@ -1,4 +1,4 @@
-super-modal [![Build Status](https://travis-ci.com/PrecisionNutrition/super-modal.svg?token=Y8mfZMTrTcJd8Mz5UCHm&branch=master)](https://travis-ci.com/PrecisionNutrition/super-modal)
+super-modal [![CircleCI](https://circleci.com/gh/PrecisionNutrition/super-modal.svg?style=svg)](https://circleci.com/gh/PrecisionNutrition/super-modal)
 ==============================================================================
 
 A versatile, CSS-only, scrollable modal that shrink wraps its content. You must define your own styles for now.
