@@ -20,11 +20,12 @@ Elements
 Attributes
 ------------------------------------------------------------------------------
 
-* `modifierClassName`   - (Optional) Class name to add to the modal to differentiate between modals for styling purposes
-* `outerClassNames`     - (Optional) Class names to add to the `-outer` div
-* `overlayClassNames`   - (Optional) Class names to add to the `-overlay` div
-* `innerClassNames`     - (Optional) Class names to add to the `-inner` div
-* `disableOverlayClose` - (Optional) Remove the ability to click on the overlay to close the modal
+* `modifierClassName`     - (Optional) Class name to add to the modal to differentiate between modals for styling purposes
+* `outerClassNames`       - (Optional) Class names to add to the `-outer` div
+* `overlayClassNames`     - (Optional) Class names to add to the `-overlay` div
+* `innerClassNames`       - (Optional) Class names to add to the `-inner` div
+* `closeButtonClassNames` - (Optional) Class names to add to the close button `button`
+* `disableOverlayClose`   - (Optional) Remove the ability to click on the overlay to close the modal
 
 NOTES:
 ------------------------------------------------------------------------------
