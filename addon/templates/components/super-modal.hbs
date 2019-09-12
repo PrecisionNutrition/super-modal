@@ -11,7 +11,7 @@
   <div class="SuperModal-inner Grid-cell {{innerClassNames}}">
 
     {{#unless hideCloseButton}}
-      <button type="button" class="SuperModal-closeButton" {{action onClose}} data-test-selector="modal-close-button" aria-label="Close">&times;</button>
+      <button type="button" class="SuperModal-closeButton {{closeButtonClassNames}}" {{action onClose}} data-test-selector="modal-close-button" aria-label="Close">&times;</button>
     {{/unless}}
 
     {{yield}}
