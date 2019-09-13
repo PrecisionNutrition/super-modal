@@ -16,13 +16,15 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    this.listener = document.addEventListener('keyup', (event) => {
+    this.listener = (event) => {
       let { key } = event;
 
       if (key === 'Escape') {
         this.onClose(event);
       }
-    });
+    };
+
+    document.addEventListener('keyup', this.listener);
   },
 
   willDestroyElement() {
