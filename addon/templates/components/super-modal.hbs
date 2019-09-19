@@ -1,17 +1,17 @@
 <div class="SuperModal-outer Grid Grid--alignCenter u-flexCol u-flexNoWrap {{outerClassNames}}">
 
   {{#if disableOverlayClose}}
-    <div class="SuperModal-overlay {{overlayClassNames}}"></div>
+    <div class="SuperModal-overlay {{overlayClassNames}}" data-test-selector="modal-overlay"></div>
   {{else}}
     {{! template-lint-disable no-invalid-interactive }}
-    <div class="SuperModal-overlay {{overlayClassNames}}" {{action onClose}}></div>
+    <div class="SuperModal-overlay {{overlayClassNames}}" {{action "closeModal"}} data-test-selector="modal-overlay"></div>
     {{! template-lint-enable no-invalid-interactive }}
   {{/if}}
 
   <div class="SuperModal-inner Grid-cell {{innerClassNames}}">
 
     {{#unless hideCloseButton}}
-      <button type="button" class="SuperModal-closeButton {{closeButtonClassNames}}" {{action onClose}} data-test-selector="modal-close-button" aria-label="Close">&times;</button>
+      <button type="button" class="SuperModal-closeButton {{closeButtonClassNames}}" {{action "closeModal"}} data-test-selector="modal-close-button" aria-label="Close">&times;</button>
     {{/unless}}
 
     {{yield}}

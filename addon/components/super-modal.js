@@ -13,14 +13,24 @@ export default Component.extend({
     'isIos11'
   ],
 
+  _annotateBodyTag() {
+    document.body.classList.add('modal-is-open');
+  },
+
+  _removeBodyTagAnnotation() {
+    document.body.classList.remove('modal-is-open');
+  },
+
   didInsertElement() {
     this._super(...arguments);
+
+    this._annotateBodyTag();
 
     this.listener = (event) => {
       let { key } = event;
 
       if (key === 'Escape') {
-        this.onClose(event);
+        this.send('closeModal', event);
       }
     };
 
@@ -31,5 +41,12 @@ export default Component.extend({
     this._super(...arguments);
 
     document.removeEventListener('keyup', this.listener);
+  },
+
+  actions: {
+    closeModal() {
+      this._removeBodyTagAnnotation()
+      this.onClose(...arguments);
+    },
   },
 });
