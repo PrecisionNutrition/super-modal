@@ -40,12 +40,14 @@ export default Component.extend({
   willDestroyElement() {
     this._super(...arguments);
 
+    this._removeBodyTagAnnotation();
+
     document.removeEventListener('keyup', this.listener);
   },
 
   actions: {
     closeModal() {
-      this._removeBodyTagAnnotation()
+      this._removeBodyTagAnnotation();
       this.onClose(...arguments);
     },
   },
