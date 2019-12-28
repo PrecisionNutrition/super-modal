@@ -16,7 +16,7 @@
       {{! template-lint-disable no-invalid-interactive }}
       <div
         class="SuperModal-overlay {{@overlayClassNames}}"
-        {{on "click" (action "closeModal")}}
+        {{on "click" (fn this.closeModal)}}
         data-test-selector="modal-overlay"
       >
       </div>
@@ -29,7 +29,7 @@
         <button
           type="button"
           class="SuperModal-closeButton {{@closeButtonClassNames}}"
-          {{on "click" (action "closeModal")}}
+          {{on "click" (fn this.closeModal)}}
           data-test-selector="modal-close-button"
           aria-label="Close"
         >
