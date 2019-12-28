@@ -11,7 +11,7 @@
   {{else}}
     {{! template-lint-disable no-invalid-interactive }}
     <div
-      class="SuperModal-overlay {{overlayClassNames}}"
+      class="SuperModal-overlay {{@overlayClassNames}}"
       {{on "click" (action "closeModal")}}
       data-test-selector="modal-overlay"
     >
@@ -19,12 +19,12 @@
     {{! template-lint-enable no-invalid-interactive }}
   {{/if}}
 
-  <div class="SuperModal-inner Grid-cell {{innerClassNames}}">
+  <div class="SuperModal-inner Grid-cell {{@innerClassNames}}">
 
-    {{#unless hideCloseButton}}
+    {{#unless @hideCloseButton}}
       <button
         type="button"
-        class="SuperModal-closeButton {{closeButtonClassNames}}"
+        class="SuperModal-closeButton {{@closeButtonClassNames}}"
         {{on "click" (action "closeModal")}}
         data-test-selector="modal-close-button"
         aria-label="Close"
