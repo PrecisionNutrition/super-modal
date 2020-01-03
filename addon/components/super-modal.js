@@ -1,30 +1,24 @@
 import Component from '@ember/component';
+
+import { action } from '@ember/object';
+
 import layout from '../templates/components/super-modal';
 
-export default Component.extend({
-  layout,
+export default class SuperModal extends Component {
+  layout = layout;
 
-  classNames: [
-    'SuperModal',
-  ],
-
-  classNameBindings: [
-    'modifierClassName',
-    'isIos11'
-  ],
-
-  _annotateBodyTag() {
+  annotateBodyTag() {
     document.body.classList.add('modal-is-open');
-  },
+  }
 
-  _removeBodyTagAnnotation() {
+  removeBodyTagAnnotation() {
     document.body.classList.remove('modal-is-open');
-  },
+  }
 
   didInsertElement() {
-    this._super(...arguments);
+    super.didInsertElement(...arguments);
 
-    this._annotateBodyTag();
+    this.annotateBodyTag();
 
     this.listener = (event) => {
       let { key } = event;
@@ -35,20 +29,19 @@ export default Component.extend({
     };
 
     document.addEventListener('keyup', this.listener);
-  },
+  }
 
   willDestroyElement() {
-    this._super(...arguments);
+    super.willDestroyElement(...arguments);
 
-    this._removeBodyTagAnnotation();
+    this.removeBodyTagAnnotation();
 
     document.removeEventListener('keyup', this.listener);
-  },
+  }
 
-  actions: {
-    closeModal() {
-      this._removeBodyTagAnnotation();
-      this.onClose(...arguments);
-    },
-  },
-});
+  @action
+  closeModal() {
+    this.removeBodyTagAnnotation();
+    this.onClose(...arguments);
+  }
+}
