@@ -6,8 +6,7 @@ A versatile, CSS-only, scrollable modal that shrink wraps its content. You must 
 Requirements
 ------------------------------------------------------------------------------
 
-* SuitCSS Grid
-* SuitCSS Flex Utility Classes
+* Tailwind
 
 Elements
 ------------------------------------------------------------------------------
